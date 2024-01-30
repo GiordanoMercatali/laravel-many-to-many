@@ -64,7 +64,7 @@
             <div class="mb-3">
                 @foreach ($technologies as $technology)
                     <label for="{{ $technology->id }}">{{ $technology->name }}</label>
-                    <input type="checkbox" name="technology_id" id="{{ $technology->id }}" value="{{ $technology->id }}">
+                    <input type="checkbox" name="technology_id" id="id-{{ $technology->id }}" value="{{ $technology->id }}">
                 @endforeach
             </div>
             
