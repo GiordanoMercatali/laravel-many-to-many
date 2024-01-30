@@ -20,6 +20,8 @@ return new class extends Migration
             $table->foreign('technology_id')->references('id')->on('technologies')->cascadeOnDelete();
             //Use cascade on delete instead of ->nullOnDelete() because a row is deleted from parent it has to be deleted from children tables as well
             $table->foreign('project_id')->references('id')->on('projects')->cascadeOnDelete();
+
+            $table->primary(['project_id', 'technology_id']);
         });
     }
 
