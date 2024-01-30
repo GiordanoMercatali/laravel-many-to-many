@@ -70,8 +70,9 @@
             <div class="mb-3">
                 @foreach ($technologies as $technology)
                     <label for="id-{{ $technology->id }}">{{ $technology->name }}</label>
-                    <input type="checkbox" name="technology_id" id="id-{{ $technology->id }}" value="{{ $technology->id }}">
-                @endforeach
+                    <input @checked(in_array($technology->id, old('technologies', []))) type="checkbox" id="technology-{{ $technology->id }}" value="{{ $technology->id }}" name="technologies[]">
+                    {{-- in_array() Checks if a value exists in an array --}}
+                    @endforeach
             </div>
 
             <a class="btn btn-warning" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-backward"></i></a>
