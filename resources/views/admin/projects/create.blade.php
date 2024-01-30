@@ -60,6 +60,13 @@
                     @endforeach
                 </select>
             </div>
+
+            <div class="mb-3">
+                @foreach ($technologies as $technology)
+                    <label for="{{ $technology->id }}">{{ $technology->name }}</label>
+                    <input type="checkbox" name="technology_id" id="{{ $technology->id }}" value="{{ $technology->id }}">
+                @endforeach
+            </div>
             
             <a class="btn btn-warning" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-backward"></i></a>
             
