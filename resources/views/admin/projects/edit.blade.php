@@ -67,6 +67,13 @@
                 </select>
             </div>
 
+            <div class="mb-3">
+                @foreach ($technologies as $technology)
+                    <label for="id-{{ $technology->id }}">{{ $technology->name }}</label>
+                    <input type="checkbox" name="technology_id" id="id-{{ $technology->id }}" value="{{ $technology->id }}">
+                @endforeach
+            </div>
+
             <a class="btn btn-warning" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-backward"></i></a>
             
             <button class="btn btn-success" type="submit"><i class="fa-solid fa-floppy-disk"></i></button>
