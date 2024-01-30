@@ -20,5 +20,9 @@ class Project extends Model
     public function type() {
         return $this->belongsTo(Type::class); //A project has a single type, so we use belongsTo and `type` must be singular.
     }
+
+    public function technologies() {
+        return $this->belongsToMany(Technology::class);
+    }
     
 }
