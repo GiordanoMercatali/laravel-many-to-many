@@ -69,9 +69,12 @@
 
             <div class="mb-3">
                 @foreach ($technologies as $technology)
+                <div class="form-check">
                     <label for="id-{{ $technology->id }}">{{ $technology->name }}</label>
                     <input @checked(in_array($technology->id, old('technologies', []))) type="checkbox" id="technology-{{ $technology->id }}" value="{{ $technology->id }}" name="technologies[]">
                     {{-- in_array() Checks if a value exists in an array --}}
+
+                </div>
                     @endforeach
             </div>
 
